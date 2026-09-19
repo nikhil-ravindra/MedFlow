@@ -86,10 +86,10 @@ If Google has retired the default model, set `export GEMINI_MODEL="<current flas
 
 ## Team
 
-- Person 1: vansh
-- Person 2: om
-- Person 3: dwijesh
-- Person 4: nikhil
+-  vansh
+-  om
+-  dwijesh
+-  nikhil
 
 
 
