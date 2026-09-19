@@ -45,12 +45,6 @@ Nothing is hardcoded. If the API is unavailable, the app shows "AI unavailable" 
 - On a normal day, …
 - During a surge, "Urgency only" left ESI 5 patients waiting up to … min. Our strategy cut this to … min, while ESI 1–2 waits stayed at … min.
 - The main bottleneck was … . Adding … reduced the average wait from … to … min.
-## Findings
-
-<!-- Person 4: fill these in with numbers from YOUR runs (Strategy comparison tab). -->
-- On a normal day, …
-- During a surge, "Urgency only" left ESI 5 patients waiting up to … min. Our strategy cut this to … min, while ESI 1–2 waits stayed at … min.
-- The main bottleneck was … . Adding … reduced the average wait from … to … min.
 
 ## How to run
 
