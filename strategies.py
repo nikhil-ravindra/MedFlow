@@ -34,3 +34,18 @@ def lateness(patient, now):
     waited = now - patient["arrival_time"]
     target = max(ESI[patient["esi"]]["target_wait"], 1)  # avoid divide by zero
     return waited / target
+
+
+def urgency_plus_wait(queue, now):
+    """Our strategy, in two tiers:
+      1. Critical patients (ESI 1-2) always go first, most urgent first.
+      2. Everyone else (ESI 3-5) is ordered by lateness - whoever is most
+         overdue compared with their target goes next.
+    Critical patients are protected exactly like 'urgency only', but a
+    low-urgency patient can no longer be pushed back forever (no starvation).
+    """
+    def key(p):
+        if p["esi"] <= CRITICAL_ESI:
+            return (0, p["esi"], p["arrival_time"], p["id"])
+        return (1, -lateness(p, now), p["arrival_time"], p["id"])
+    return sorted(queue, key=key)
