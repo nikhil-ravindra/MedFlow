@@ -1,4 +1,4 @@
-# 🏥 MedFlow — Prioritize Patients. Optimize Resources.
+# MedFlow — Prioritize Patients. Optimize Resources.
 
 A hospital resource management simulator built for **Hack-a-Matics 2026** (Theme: VECTOR, problem statement: MedFlow).
 
@@ -15,7 +15,7 @@ Patients arrive at random. An **AI triage nurse (LLM)** reads each patient's com
 - Scenarios (bonus features): emergency surge, ambulance arrivals, staff shortage, equipment failure, ICU capacity
 - AI triage (live) and an AI results analyst
 
-## 🤖 AI component
+##  AI component
 
 | What | How |
 |---|---|
@@ -26,7 +26,7 @@ Patients arrive at random. An **AI triage nurse (LLM)** reads each patient's com
 
 Nothing is hardcoded. If the API is unavailable, the app shows "AI unavailable" instead of a made-up answer.
 
-## 🧮 The maths
+##  The maths
 
 1. **Random arrivals (Poisson process):** For each simulated minute, the number of new patients follows a Poisson distribution with mean λ = rate / 60. A surge multiplies λ by 3 for 2 hours. Ambulances are a second Poisson stream of ESI 1–2 patients.
 2. **Discrete-time simulation:** Each minute, finished patients are discharged, new arrivals join the queue, and the strategy orders the queue.
@@ -65,13 +65,13 @@ If Google has retired the default model, set `export GEMINI_MODEL="<current flas
 
 | File | What it does | Owner |
 |---|---|---|
-| `config.py` | Shared settings: resources, ESI table, scenarios | Person 1 |
-| `sim.py` | Arrivals, events and the minute-by-minute simulation | Person 1 |
-| `strategies.py` | The 4 scheduling strategies | Person 2 |
-| `metrics.py` | Waiting times, % seen on time, utilisation, Little's law, strategy comparison | Person 2 |
-| `tests/test_sim.py` | Checks capacity, fairness and Little's law | Person 2 |
-| `app.py` | Streamlit dashboard | Person 3 |
-| `triage.py`, `ai_assistant.py`, `build_dataset.py`, `data/` | AI components and data | Person 4 |
+| `config.py` | Shared settings: resources, ESI table, scenarios | Vansh |
+| `sim.py` | Arrivals, events and the minute-by-minute simulation | Vansh |
+| `strategies.py` | The 4 scheduling strategies | Om |
+| `metrics.py` | Waiting times, % seen on time, utilisation, Little's law, strategy comparison | Om |
+| `tests/test_sim.py` | Checks capacity, fairness and Little's law | Om |
+| `app.py` | Streamlit dashboard | Dwijesh |
+| `triage.py`, `ai_assistant.py`, `build_dataset.py`, `data/` | AI components and data | Nikhil |
 
 ## Simplifications
 
