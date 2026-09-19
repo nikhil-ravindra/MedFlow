@@ -20,3 +20,17 @@ def urgency_only(queue, now):
     """Most urgent (lowest ESI) first; ties broken by arrival time."""
     return sorted(queue, key=lambda p: (p["esi"], p["arrival_time"], p["id"]))
 
+# Patients at this ESI level or more urgent are ALWAYS served first.
+CRITICAL_ESI = 2
+
+
+def lateness(patient, now):
+    """lateness = minutes waited / target wait for this ESI level.
+
+    1.0 means "exactly at the target", 2.0 means "waited twice as long as
+    allowed". Comparing lateness (not raw minutes) is fair across levels:
+    30 min is a disaster for ESI 3 (target 30) but fine for ESI 5 (target 120).
+    """
+    waited = now - patient["arrival_time"]
+    target = max(ESI[patient["esi"]]["target_wait"], 1)  # avoid divide by zero
+    return waited / target
