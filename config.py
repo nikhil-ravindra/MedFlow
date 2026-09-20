@@ -27,4 +27,51 @@ ESI = {
         "target_wait": 0,
         "color": "#d62728",
     }
+    2: {
+        "name": "Emergent",
+        "example": "chest pain, stroke symptoms, severe breathing trouble",
+        "default_needs": {"bed": 1, "icu_bed": 0, "doctor": 1, "nurse": 1},
+        "treatment_minutes": (60, 120),
+        "target_wait": 10,
+        "color": "#ff7f0e",
+    },
+    3: {
+        "name": "Urgent",
+        "example": "high fever, suspected fracture, abdominal pain",
+        "default_needs": {"bed": 1, "icu_bed": 0, "doctor": 1, "nurse": 1},
+        "treatment_minutes": (45, 90),
+        "target_wait": 30,
+        "color": "#e6b800",
+    },
+    4: {
+        "name": "Less urgent",
+        "example": "small cut needing stitches, sprained ankle",
+        "default_needs": {"bed": 0, "icu_bed": 0, "doctor": 1, "nurse": 1},
+        "treatment_minutes": (20, 40),
+        "target_wait": 60,
+        "color": "#7cb342",
+    },
+    5: {
+        "name": "Non-urgent",
+        "example": "prescription refill, mild cold",
+        "default_needs": {"bed": 0, "icu_bed": 0, "doctor": 1, "nurse": 0},
+        "treatment_minutes": (10, 20),
+        "target_wait": 120,
+        "color": "#2e7d32",
+    },
 }
+
+# Default simulation settings.
+SIM_DEFAULTS = {"rate_per_hour": 5, "sim_hours": 12}
+
+# Scenario settings used when a checkbox is ticked in the dashboard.
+SURGE_MULTIPLIER = 3          # arrivals x3 during a surge
+SURGE_DURATION_MIN = 120      # surge lasts 2 hours
+AMBULANCE_RATE_PER_HOUR = 2   # extra high-urgency arrivals
+SHORTAGE = {"doctor": -2, "nurse": -3}             # staff lost for the 2nd half
+FAILURE = {"bed": -3, "icu_bed": -1}               # equipment out of service
+FAILURE_DURATION_MIN = 90
+
+# Where the AI-triaged patient data lives (made by build_dataset.py).
+PATIENT_POOL_PATH = "data/patients.json"
+
