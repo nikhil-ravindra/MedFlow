@@ -49,3 +49,17 @@ def urgency_plus_wait(queue, now):
             return (0, p["esi"], p["arrival_time"], p["id"])
         return (1, -lateness(p, now), p["arrival_time"], p["id"])
     return sorted(queue, key=key)
+    
+def urgency_shortest_first(queue, now):
+    """Most urgent first; within the same urgency, shortest treatment first.
+    (Shortest-job-first is the classic rule that minimises average waiting time.)"""
+    return sorted(queue, key=lambda p: (p["esi"], p["treatment_time"], p["arrival_time"], p["id"]))
+
+
+# The names shown in the dashboard dropdown -> the function to use.
+STRATEGIES = {
+    "First come, first served": fcfs,
+    "Urgency only": urgency_only,
+    "Urgency + waiting time (ours)": urgency_plus_wait,
+    "Urgency + shortest job first": urgency_shortest_first,
+}
