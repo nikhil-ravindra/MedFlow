@@ -28,10 +28,10 @@ st.set_page_config(page_title="MedFlow", page_icon="🏥", layout="wide")
 # Constants
 # ---------------------------------------------------------------------------
 TEAM = [
-    ("Nikhil", "AI triage with Gemini · AI results analyst · AI-triaged patient data", "🤖"),
     ("Vansh", "Simulation engine", "⚙️"),
     ("Om", "Strategies & statistics", "📐"),
     ("Dwijesh", "Dashboard & UI", "🖥️"),
+    ("Nikhil", "AI triage & data", "🤖"),
 ]
 OURS = "Urgency + waiting time (ours)" if "Urgency + waiting time (ours)" in STRATEGIES else list(STRATEGIES)[0]
 STRATEGY_HELP = {
