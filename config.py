@@ -26,7 +26,7 @@ ESI = {
         "treatment_minutes": (120, 240),
         "target_wait": 0,
         "color": "#d62728",
-    }
+    },
     2: {
         "name": "Emergent",
         "example": "chest pain, stroke symptoms, severe breathing trouble",
