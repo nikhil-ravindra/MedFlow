@@ -95,7 +95,7 @@ def generate_arrivals(pool, rate_per_hour, sim_minutes, seed=42,
     amb_rng = random.Random(seed + 1000)
     ambulance_pool = [p for p in pool if p["esi"] <= 2]
 
- patients = []
+    patients = []
     for minute in range(sim_minutes):
         rate = rate_per_hour
         if surge and surge["start"] <= minute < surge["end"]:
