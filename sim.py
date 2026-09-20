@@ -156,6 +156,72 @@ def prepare_run(pool, settings, seed=42):
     )
     events = build_events(settings, sim_minutes, seed)
     return patients, events, sim_minutes, surge
+# ---------------------------------------------------------------------------
+# The main simulation loop
+# ---------------------------------------------------------------------------
+def _fits(needs, used, cap):
+    return all(used[r] + needs.get(r, 0) <= cap[r] for r in RESOURCE_TYPES)
+
+
+def run_simulation(patients, resources, strategy_name, sim_minutes, events=None):
+    """Run the hospital for `sim_minutes` using one scheduling strategy.
+
+    The input `patients` list is not modified (we work on a copy), so the same
+    patients can be replayed with every strategy for a fair comparison.
+    """
+    events = events or []
+    order_queue = STRATEGIES[strategy_name]
+    patients = copy.deepcopy(patients)
+
+    arrivals_at = {}
+    for p in patients:
+        arrivals_at.setdefault(p["arrival_time"], []).append(p)
+
+    queue, treating, timeline = [], [], []
+    used = {r: 0 for r in RESOURCE_TYPES}
+
+    for minute in range(sim_minutes):
+        # 1. Discharge finished patients
+        still_treating = []
+        for p in treating:
+            if p["end_time"] <= minute:
+                for r in RESOURCE_TYPES:
+                    used[r] -= p["needs"].get(r, 0)
+            else:
+                still_treating.append(p)
+        treating = still_treating
+
+        # 2. New arrivals join the queue
+        queue.extend(arrivals_at.get(minute, []))
+
+        # 3. Assign resources, all-or-nothing, in the strategy's order
+        cap = capacity_at(resources, events, minute)
+        for p in order_queue(queue, minute):
+            if _fits(p["needs"], used, cap):
+                for r in RESOURCE_TYPES:
+                    used[r] += p["needs"].get(r, 0)
+                p["start_time"] = minute
+                p["end_time"] = minute + p["treatment_time"]
+                treating.append(p)
+        queue = [p for p in queue if p["start_time"] is None]
+
+        # 4. Snapshot for the charts
+        timeline.append({
+            "t": minute,
+            "queue_len": len(queue),
+            "treating": len(treating),
+            "used": dict(used),
+            "capacity": cap,
+        })
+
+    return {
+        "patients": patients,
+        "timeline": timeline,
+        "strategy": strategy_name,
+        "sim_minutes": sim_minutes,
+        "resources": dict(resources),
+        "events": events,
+    }
 
                     
 
