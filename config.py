@@ -1,7 +1,7 @@
 """
 config.py - shared settings for MedFlow.
 
-Owner: Person 1. Everyone imports from this file; only Person 1 edits it,
+Owner: Vansh. Everyone imports from this file; only Vansh edits it,
 so the whole team always agrees on the same numbers.
 """
 
