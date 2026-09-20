@@ -41,10 +41,10 @@ Nothing is hardcoded. If the API is unavailable, the app shows "AI unavailable" 
 
 ## Findings
 
-<!-- Person 4: fill these in with numbers from YOUR runs (Strategy comparison tab). -->
-- On a normal day, …
-- During a surge, "Urgency only" left ESI 5 patients waiting up to … min. Our strategy cut this to … min, while ESI 1–2 waits stayed at … min.
-- The main bottleneck was … . Adding … reduced the average wait from … to … min.
+On a normal day all strategies perform the same (≈1 min average wait, 94.5% seen on time): the hospital has spare capacity.
+During a surge, first-come-first-served makes life-threatening ESI 1 patients wait 41 min on average; every urgency-based strategy cuts this to about 6 min.
+Urgency-only leaves the lowest-priority patients waiting up to 457 min. Our strategy cuts the worst case to 289 min (−37%) while also slightly improving ESI 1–2 waits (6.0 vs 6.5 min, 11.4 vs 13.6 min).
+Trade-off: shortest-job-first sees the most patients within their target (58% vs our 43%), because it clears quick cases first. Our strategy prioritises fairness (no one waits forever) over that metric.
 
 ## How to run
 
