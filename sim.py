@@ -95,3 +95,67 @@ def generate_arrivals(pool, rate_per_hour, sim_minutes, seed=42,
     amb_rng = random.Random(seed + 1000)
     ambulance_pool = [p for p in pool if p["esi"] <= 2]
 
+ patients = []
+    for minute in range(sim_minutes):
+        rate = rate_per_hour
+        if surge and surge["start"] <= minute < surge["end"]:
+            rate *= surge["multiplier"]
+
+        for _ in range(_poisson(walk_rng, rate / 60)):
+            template = walk_rng.choice(pool)
+            patients.append(_make_patient(walk_rng, template, minute, "walk-in", len(patients)))
+
+        if ambulance_pool and ambulance_rate_per_hour > 0:
+            for _ in range(_poisson(amb_rng, ambulance_rate_per_hour / 60)):
+                template = amb_rng.choice(ambulance_pool)
+                patients.append(_make_patient(amb_rng, template, minute, "ambulance", len(patients)))
+    return patients
+
+
+# ---------------------------------------------------------------------------
+# Scenario events (staff shortage, equipment failure)
+# ---------------------------------------------------------------------------
+def build_events(settings, sim_minutes, seed=42):
+    """Turn the dashboard checkboxes into capacity-change events."""
+    events = []
+    if settings.get("staff_shortage"):
+        start = sim_minutes // 2
+        for resource, delta in SHORTAGE.items():
+            events.append({"name": "Staff shortage", "resource": resource,
+                           "delta": delta, "start": start, "end": sim_minutes})
+    if settings.get("resource_failure"):
+        rng = random.Random(seed + 7)
+        start = rng.randint(sim_minutes // 4, sim_minutes // 2)
+        for resource, delta in FAILURE.items():
+            events.append({"name": "Equipment failure", "resource": resource,
+                           "delta": delta, "start": start,
+                           "end": min(start + FAILURE_DURATION_MIN, sim_minutes)})
+    return events
+
+
+def capacity_at(resources, events, minute):
+    """How many of each resource exist at this minute, after events."""
+    cap = dict(resources)
+    for e in events:
+        if e["start"] <= minute < e["end"]:
+            cap[e["resource"]] = max(0, cap[e["resource"]] + e["delta"])
+    return cap
+
+
+def prepare_run(pool, settings, seed=42):
+    """Everything needed before run_simulation: patients, events, length."""
+    sim_minutes = int(settings["sim_hours"] * 60)
+    surge = None
+    if settings.get("surge"):
+        start = sim_minutes // 4
+        surge = {"start": start, "end": min(start + SURGE_DURATION_MIN, sim_minutes),
+                 "multiplier": SURGE_MULTIPLIER}
+    patients = generate_arrivals(
+        pool, settings["rate_per_hour"], sim_minutes, seed=seed, surge=surge,
+        ambulance_rate_per_hour=AMBULANCE_RATE_PER_HOUR if settings.get("ambulances") else 0,
+    )
+    events = build_events(settings, sim_minutes, seed)
+    return patients, events, sim_minutes, surge
+
+                    
+
