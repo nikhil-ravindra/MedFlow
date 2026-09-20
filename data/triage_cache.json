@@ -826,5 +826,17 @@
     "reason": "Severe hypertension with acute neurological symptoms is a high-risk situation requiring immediate evaluation for end-organ damage.",
     "model": "gemini-3.6-flash",
     "complaint": "Severe headache, blurred vision, BP 190/110, age 58"
+  },
+  "fd0e2e2095921a16685cd21ef0f533b74ffb382f": {
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Chest pain accompanied by severe hypertension indicates a potential acute coronary syndrome or hypertensive emergency requiring rapid assessment.",
+    "model": "gemini-3.6-flash",
+    "complaint": "Chest pain,BP 190/65"
   }
 }
