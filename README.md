@@ -1,6 +1,7 @@
 # MedFlow — Prioritize Patients. Optimize Resources.
 
 **Live demo:** https://medflowmax.streamlit.app
+**Demo video** https://youtu.be/bWcQGqshU7o
 
 A hospital resource management simulator built for **Hack-a-Matics 2026** (Theme: VECTOR, problem statement: MedFlow).
 
