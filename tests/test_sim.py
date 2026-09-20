@@ -57,3 +57,35 @@ def test_events_reduce_capacity_for_new_patients():
         used = _usage_at(res["patients"], p["start_time"])
         for r in RESOURCE_TYPES:
             assert used[r] <= max(cap[r], RESOURCES[r])
+
+
+def test_littles_law_holds_exactly():
+    patients = _patients()
+    for name in STRATEGIES:
+        m = compute_metrics(run_simulation(patients, RESOURCES, name, 480))
+        ll = m["littles_law"]
+        assert abs(ll["L_predicted"] - ll["L_measured"]) < 1e-9
+
+
+def test_input_patients_not_modified():
+    patients = _patients()
+    run_simulation(patients, RESOURCES, "First come, first served", 480)
+    assert all(p["start_time"] is None for p in patients)
+
+
+def test_urgent_patient_goes_first():
+    one_doctor = {"bed": 5, "icu_bed": 1, "doctor": 1, "nurse": 5}
+    base = {"source": "walk-in", "complaint": "", "ai_reason": "", "start_time": None,
+            "end_time": None, "treatment_time": 30}
+    patients = [
+        dict(base, id=0, arrival_time=0, esi=5, needs={"doctor": 1}),
+        dict(base, id=1, arrival_time=0, esi=2, needs={"doctor": 1}),
+    ]
+    res = run_simulation(patients, one_doctor, "Urgency only", 120)
+    starts = {p["id"]: p["start_time"] for p in res["patients"]}
+    assert starts[1] == 0 and starts[0] == 30
+
+
+def test_compare_strategies_has_one_row_each():
+    table, _ = compare_strategies(_patients(), RESOURCES, 480)
+    assert list(table["strategy"]) == list(STRATEGIES)
