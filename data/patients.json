@@ -1,1 +1,818 @@
-..
+[
+  {
+    "complaint": "Unresponsive, not breathing, no pulse, found collapsed at home",
+    "esi": 1,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 1,
+      "doctor": 1,
+      "nurse": 2
+    },
+    "reason": "Patient is in cardiac arrest requiring immediate resuscitation.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Motorbike accident, heavy bleeding from thigh, BP 80/50, confused",
+    "esi": 1,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 1,
+      "doctor": 1,
+      "nurse": 2
+    },
+    "reason": "Major trauma with massive hemorrhage and severe shock requiring immediate life-saving intervention.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Severe difficulty breathing, lips turning blue, oxygen saturation 82%",
+    "esi": 1,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 1,
+      "doctor": 1,
+      "nurse": 2
+    },
+    "reason": "Severe acute respiratory failure with cyanosis requiring immediate airway support.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Seizure lasting over 10 minutes, not stopping",
+    "esi": 1,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 1,
+      "doctor": 1,
+      "nurse": 2
+    },
+    "reason": "Status epilepticus requiring immediate medical intervention to control continuous seizures.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Stabbed in the abdomen, pale and sweaty, HR 140",
+    "esi": 1,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 1,
+      "doctor": 1,
+      "nurse": 2
+    },
+    "reason": "Penetrating abdominal trauma presenting with hemodynamic instability and severe shock.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Severe allergic reaction after bee sting, throat swelling, wheezing",
+    "esi": 1,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 1,
+      "doctor": 1,
+      "nurse": 2
+    },
+    "reason": "Severe anaphylactic reaction with throat swelling and impending airway obstruction.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Fell from second floor, not moving legs, unconscious for 2 minutes",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "High-mechanism fall with transient loss of consciousness and neurological deficits.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Overdose of unknown tablets, drowsy, breathing slowly",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Overdose presenting with altered mental status and respiratory depression.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Crushing chest pain spreading to left arm, sweating, BP 150/95",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Crushing chest pain and diaphoresis strongly indicative of acute coronary syndrome.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Sudden weakness on right side of body and slurred speech, started 40 minutes ago",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Acute stroke symptoms presenting well within the thrombolytic treatment window.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Worst headache of my life, came on suddenly, vomiting",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Sudden severe thunderclap headache with vomiting raising concern for subarachnoid hemorrhage.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Chest pain and shortness of breath, history of heart disease, HR 115",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Acute chest pain and dyspnea with tachycardia in a patient with cardiac history.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Asthma attack, can only speak a few words, inhaler not helping",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Severe asthma exacerbation with marked respiratory difficulty unresponsive to inhalers.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "High fever 40.2C with stiff neck and rash, age 19",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "High fever with nuchal rigidity and rash concerning for acute bacterial meningitis.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Vomiting blood, dizzy when standing, HR 120",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Upper gastrointestinal bleeding with orthostatic dizziness and compensatory tachycardia.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Pregnant 34 weeks, severe abdominal pain and bleeding",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Late third-trimester abdominal pain and bleeding suggestive of placental abruption.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Diabetic, blood sugar 38 mg/dL, confused and sweating",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Severe symptomatic hypoglycemia causing acute altered mental status.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Burns on both arms and chest from kitchen fire, in severe pain",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Significant partial-thickness burn injuries across chest and arms causing severe pain.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Elderly man, fever 39C, confused, BP 90/60, suspected infection",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Elderly patient with fever, confusion, and hypotension suggestive of severe sepsis.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Severe pain in lower right abdomen for 12 hours, fever 38.5C",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Suspected acute appendicitis requiring blood work, imaging, and intravenous therapy.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Fell on outstretched hand, wrist swollen and deformed",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Deformed extremity injury requiring radiographic evaluation, reduction, and splinting.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Kidney stone history, severe flank pain, vomiting, vital signs normal",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Severe flank pain and vomiting from suspected renal colic requiring IV analgesia and imaging.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Deep cut on forearm from glass, bleeding controlled with pressure, may need stitches and x-ray",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Deep laceration needing multiple resources including X-ray screening and suturing.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Child age 6, fever 39.5C for 3 days, not eating, vital signs stable",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Pediatric patient with prolonged high fever and poor oral intake requiring laboratory testing.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Twisted knee playing football, cannot put weight on it, swollen",
+    "esi": 4,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Acute isolated knee injury requiring physical examination and a single X-ray.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Abdominal pain and vomiting for 1 day, can keep sips of water down",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Abdominal pain and vomiting require laboratory testing, IV fluids, and diagnostic evaluation.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Shortness of breath when walking, swollen ankles, history of heart failure, oxygen 93%",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Exertional dyspnea with hypoxia and heart failure history presents a high risk for acute cardiac decompensation.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Fever, cough with yellow sputum for 5 days, oxygen 94%",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Productive cough and fever with borderline oxygen saturation warrant chest radiography and lab work.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Hit head on cupboard, brief dizziness, now alert, on blood thinners",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Head trauma while on anticoagulant therapy carries a high risk for intracranial hemorrhage.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Pain and swelling in one calf after long flight",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Unilateral leg swelling and pain post-flight require vascular ultrasound to rule out deep vein thrombosis.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Moderate asthma, wheezing, speaking full sentences, oxygen 95%",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Wheezing and asthma exacerbation require nebulizer treatments and respiratory monitoring.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Severe back pain after lifting, cannot stand straight, no numbness",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Severe back pain causing physical impairment requires acute pain management and diagnostic assessment.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Diabetic with blood sugar 420 mg/dL, very thirsty, vital signs stable",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Marked hyperglycemia with osmotic symptoms requires intravenous hydration and laboratory evaluation.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Car accident at low speed, neck pain, walking, alert",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Post-collision neck pain requires cervical spine imaging and neurological assessment.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Heavy vaginal bleeding, soaking a pad every hour, HR 100",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Heavy active vaginal bleeding accompanied by tachycardia poses a high risk for acute hemorrhagic shock.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Dog bite on the hand, puncture wounds, swelling",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Hand bite wounds carry a high risk of deep tissue infection requiring wound care and IV or oral antibiotics.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Migraine with vomiting, known migraine patient, usual medicine not working",
+    "esi": 3,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Refractory severe migraine with vomiting requires parenteral antiemetics and analgesics.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Sudden loss of vision in one eye, painless, started 1 hour ago",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Sudden painless monocular vision loss is a time-critical ophthalmic emergency requiring immediate evaluation.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Pneumonia symptoms in 75-year-old woman, fever 38.8C, oxygen 92%",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Elderly patient with high fever and hypoxia is at elevated risk for rapid septic and respiratory decline.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Painful swollen testicle, started suddenly 2 hours ago, teenage boy",
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Sudden onset of severe scrotal pain in an adolescent is a high-risk concern for testicular torsion requiring immediate ultrasound.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Sprained ankle, can walk with a limp, mild swelling",
+    "esi": 4,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Minor weight-bearing ankle injury requires a single resource for diagnostic X-ray.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Small cut on finger from kitchen knife, needs stitches, bleeding stopped",
+    "esi": 4,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Hemostatically stable laceration requires a single resource for wound suturing.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Sore throat and fever 38C for 2 days, eating and drinking fine",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Uncomplicated sore throat with normal oral intake requires examination and symptomatic prescription.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Earache for 2 days, mild fever",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Isolated ear pain without severe systemic symptoms requires clinical examination without acute resources.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Urinary burning and frequency for 3 days, no fever",
+    "esi": 4,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Dysuria and urinary frequency require a single resource for urinalysis and testing.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Rash on arms, itchy, no breathing problems, started yesterday",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Localized itchy rash without airway involvement or systemic distress requires clinical evaluation only.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Minor burn on hand from hot pan, small blister",
+    "esi": 4,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Minor localized partial-thickness burn requires a single resource for wound care dressing.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Something in the eye, redness and watering, vision normal",
+    "esi": 4,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Ocular foreign body sensation requires fluorescein examination and eye irrigation.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Nosebleed that stopped after 15 minutes of pressure",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Resolved epistaxis in a hemodynamically stable patient requires basic examination without emergency resources.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Toothache with slight facial swelling, no fever",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Dental pain with localized swelling and no fever requires clinical evaluation and oral medication.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Mild allergic reaction, itchy hives, no swelling of lips or throat",
+    "esi": 4,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Mild allergic reaction with no airway compromise requires a single resource such as oral medication.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Twisted wrist, can move fingers, mild pain",
+    "esi": 4,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Twisted wrist with mild pain requires an X-ray as a single resource.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Vomiting and diarrhoea since last night, drinking fluids, vital signs normal",
+    "esi": 4,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Gastroenteritis with normal vital signs and tolerable oral fluid intake likely requires one resource like oral medication.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Splinter in foot, painful to walk",
+    "esi": 4,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Splinter removal is a simple minor bedside procedure requiring one resource.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Back pain for a week, walking normally, no other symptoms",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Subacute back pain without neurological deficits or red flags requires no extra ED resources.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Minor head bump, no loss of consciousness, alert, no blood thinners",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Minor head injury without loss of consciousness, altered mental status, or antiplatelet/anticoagulant risk requires no diagnostic resources.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Needs refill of blood pressure medication, ran out yesterday, feels fine",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Prescription refill request for an asymptomatic patient requires no ED testing or procedures.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Common cold, runny nose and mild cough for 3 days",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Uncomplicated upper respiratory viral symptoms require medical advice and no acute ED resources.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Wants a doctor's note for work after mild flu, now recovered",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Administrative request for a work note in a recovered patient requires no clinical resources.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Suture removal, wound healing well",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Routine suture removal on a well-healing wound requires no complex ED diagnostic or treatment resources.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Mild sunburn on shoulders",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Mild sunburn without blistering or systemic symptoms requires supportive home care advice.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Insect bite on leg, small red bump, itchy",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Localized mild insect bite reaction requires reassurance and no additional diagnostic or therapeutic resources.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Request for tetanus shot after scratch from a rusty fence, wound already clean",
+    "esi": 4,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Administration of a tetanus vaccination counts as a single resource.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Dressing change for a small healing wound",
+    "esi": 4,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Simple wound dressing change requires a single nursing resource.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Mild constipation for 4 days, eating normally",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Mild constipation in an otherwise stable patient requires counseling or prescription without ED resources.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Dry cough for a week, no fever, breathing fine",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Subacute cough without fever or respiratory distress requires simple clinical evaluation.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Contact lens discomfort, eye slightly red, vision normal",
+    "esi": 4,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Contact lens irritation with red eye typically requires fluorescein eye examination as a single resource.",
+    "model": "gemini-3.6-flash"
+  },
+  {
+    "complaint": "Known eczema flare-up, itchy skin, no infection signs",
+    "esi": 5,
+    "needs": {
+      "bed": 0,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 0
+    },
+    "reason": "Uncomplicated eczema flare without signs of secondary infection requires routine topical treatment advice.",
+    "model": "gemini-3.6-flash"
+  }
+]
