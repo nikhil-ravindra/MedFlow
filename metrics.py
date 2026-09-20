@@ -90,3 +90,29 @@ def compute_metrics(results):
 
     return {"summary": summary, "by_esi": by_esi, "utilisation": utilisation,
             "littles_law": littles_law}
+
+
+def compare_strategies(patients, resources, sim_minutes, events=None):
+    """Run EVERY strategy on the SAME patients (a fair comparison).
+
+    Returns (table, all_results) where table has one row per strategy.
+    """
+    rows, all_results = [], {}
+    for name in STRATEGIES:
+        results = run_simulation(patients, resources, name, sim_minutes, events)
+        m = compute_metrics(results)
+        all_results[name] = results
+        row = {
+            "strategy": name,
+            "avg_wait": round(m["summary"]["avg_wait"], 1),
+            "pct_on_time": round(m["summary"]["pct_on_time"], 1),
+            "treated": m["summary"]["treated"],
+            "still_waiting": m["summary"]["still_waiting"],
+        }
+        by_esi = m["by_esi"]
+        for esi in ESI:
+            match = by_esi[by_esi["esi"] == esi] if not by_esi.empty else by_esi
+            row[f"ESI {esi} avg wait"] = round(float(match["avg_wait"].iloc[0]), 1) if len(match) else None
+            row[f"ESI {esi} max wait"] = int(match["max_wait"].iloc[0]) if len(match) else None
+        rows.append(row)
+    return pd.DataFrame(rows), all_results
