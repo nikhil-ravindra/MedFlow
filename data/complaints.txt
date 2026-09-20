@@ -1,0 +1,71 @@
+# Patient complaints used to build the simulation's patient pool.
+# One per line. Lines starting with # are ignored.
+# These are fictional examples. The AI (triage.py) decides the ESI level and needs.
+Unresponsive, not breathing, no pulse, found collapsed at home
+Motorbike accident, heavy bleeding from thigh, BP 80/50, confused
+Severe difficulty breathing, lips turning blue, oxygen saturation 82%
+Seizure lasting over 10 minutes, not stopping
+Stabbed in the abdomen, pale and sweaty, HR 140
+Severe allergic reaction after bee sting, throat swelling, wheezing
+Fell from second floor, not moving legs, unconscious for 2 minutes
+Overdose of unknown tablets, drowsy, breathing slowly
+Crushing chest pain spreading to left arm, sweating, BP 150/95
+Sudden weakness on right side of body and slurred speech, started 40 minutes ago
+Worst headache of my life, came on suddenly, vomiting
+Chest pain and shortness of breath, history of heart disease, HR 115
+Asthma attack, can only speak a few words, inhaler not helping
+High fever 40.2C with stiff neck and rash, age 19
+Vomiting blood, dizzy when standing, HR 120
+Pregnant 34 weeks, severe abdominal pain and bleeding
+Diabetic, blood sugar 38 mg/dL, confused and sweating
+Burns on both arms and chest from kitchen fire, in severe pain
+Elderly man, fever 39C, confused, BP 90/60, suspected infection
+Severe pain in lower right abdomen for 12 hours, fever 38.5C
+Fell on outstretched hand, wrist swollen and deformed
+Kidney stone history, severe flank pain, vomiting, vital signs normal
+Deep cut on forearm from glass, bleeding controlled with pressure, may need stitches and x-ray
+Child age 6, fever 39.5C for 3 days, not eating, vital signs stable
+Twisted knee playing football, cannot put weight on it, swollen
+Abdominal pain and vomiting for 1 day, can keep sips of water down
+Shortness of breath when walking, swollen ankles, history of heart failure, oxygen 93%
+Fever, cough with yellow sputum for 5 days, oxygen 94%
+Hit head on cupboard, brief dizziness, now alert, on blood thinners
+Pain and swelling in one calf after long flight
+Moderate asthma, wheezing, speaking full sentences, oxygen 95%
+Severe back pain after lifting, cannot stand straight, no numbness
+Diabetic with blood sugar 420 mg/dL, very thirsty, vital signs stable
+Car accident at low speed, neck pain, walking, alert
+Heavy vaginal bleeding, soaking a pad every hour, HR 100
+Dog bite on the hand, puncture wounds, swelling
+Migraine with vomiting, known migraine patient, usual medicine not working
+Sudden loss of vision in one eye, painless, started 1 hour ago
+Pneumonia symptoms in 75-year-old woman, fever 38.8C, oxygen 92%
+Painful swollen testicle, started suddenly 2 hours ago, teenage boy
+Sprained ankle, can walk with a limp, mild swelling
+Small cut on finger from kitchen knife, needs stitches, bleeding stopped
+Sore throat and fever 38C for 2 days, eating and drinking fine
+Earache for 2 days, mild fever
+Urinary burning and frequency for 3 days, no fever
+Rash on arms, itchy, no breathing problems, started yesterday
+Minor burn on hand from hot pan, small blister
+Something in the eye, redness and watering, vision normal
+Nosebleed that stopped after 15 minutes of pressure
+Toothache with slight facial swelling, no fever
+Mild allergic reaction, itchy hives, no swelling of lips or throat
+Twisted wrist, can move fingers, mild pain
+Vomiting and diarrhoea since last night, drinking fluids, vital signs normal
+Splinter in foot, painful to walk
+Back pain for a week, walking normally, no other symptoms
+Minor head bump, no loss of consciousness, alert, no blood thinners
+Needs refill of blood pressure medication, ran out yesterday, feels fine
+Common cold, runny nose and mild cough for 3 days
+Wants a doctor's note for work after mild flu, now recovered
+Suture removal, wound healing well
+Mild sunburn on shoulders
+Insect bite on leg, small red bump, itchy
+Request for tetanus shot after scratch from a rusty fence, wound already clean
+Dressing change for a small healing wound
+Mild constipation for 4 days, eating normally
+Dry cough for a week, no fever, breathing fine
+Contact lens discomfort, eye slightly red, vision normal
+Known eczema flare-up, itchy skin, no infection signs
