@@ -814,5 +814,17 @@
     "reason": "Dental pain with localized swelling and no fever requires clinical evaluation and oral medication.",
     "model": "gemini-3.6-flash",
     "complaint": "Toothache with slight facial swelling, no fever"
+  },
+  "dea0604de0785c4353ad883bda66a3f78ef86cc0": {
+    "esi": 2,
+    "needs": {
+      "bed": 1,
+      "icu_bed": 0,
+      "doctor": 1,
+      "nurse": 1
+    },
+    "reason": "Severe hypertension with acute neurological symptoms is a high-risk situation requiring immediate evaluation for end-organ damage.",
+    "model": "gemini-3.6-flash",
+    "complaint": "Severe headache, blurred vision, BP 190/110, age 58"
   }
 }
